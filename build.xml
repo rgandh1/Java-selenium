@@ -1,0 +1,125 @@
+<!DOCTYPE project>
+<project basedir="." default="usage" name="SeleniumWorkshop">
+
+	<!-- ========== Initialize Properties =================================== -->
+	<property environment="env" />
+	<tstamp>
+		<format pattern="YYYYMMdd_HH_mm_ss aa" property="START_TIME" />
+	</tstamp>
+	<property name="ws.home" value="${basedir}" />
+	<property name="ws.jars" value="${ws.home}//ClassFolder" />
+	<property name="test.dest" value="${ws.home}/bin" />
+	<property name="test.src" value="${ws.home}/src" />
+	<property name="ng.result" value="${ws.home}/Test Reports" />
+	<property name="test.result" value="${ws.home}/Test_Reports" />
+	<property name="test.result.archive" value="${ws.home}/Test_Reports/archive" />
+
+	<!-- ========== Set Classpath =================================== -->
+	<target name="setClassPath" unless="test.classpath">
+		<path id="classpath_jars">
+			<fileset dir="${ws.jars}" includes="*.jar" />
+		</path>
+		<pathconvert property="test.classpath" refid="classpath_jars"
+			pathsep=":" />
+	</target>
+
+	<!-- ========== Initialise  =================================== -->
+	<target name="init" depends="setClassPath">
+		<tstamp>
+			<format pattern="MM_dd_yyyy_hh_mm_aa" property="start.time" />
+		</tstamp>
+		<condition property="ANT" value="${env.ANT_HOME}/bin/ant.bat"
+			else="${env.ANT_HOME}/bin/ant">
+			<os family="windows" />
+		</condition>
+		<taskdef name="testng" classname="org.testng.TestNGAntTask"
+			classpath="${test.classpath}" />
+	</target>
+
+	<!-- ========== Clean  =================================== -->
+	
+	<target name="clean">
+		<delete dir="${test.dest}" />
+		<mkdir dir="${test.result}//testngOutput//" />
+		<move todir="${test.result.archive}">
+    		<fileset dir="${test.result}//testngOutput//" includes="**" />
+  		</move>
+  		<mkdir dir="${test.result}//XSLT_Reports//" />
+		<move todir="${test.result.archive}">
+    		<fileset dir="${test.result}//XSLT_Reports//" includes="**"/>
+  		</move>
+  		<mkdir dir="${test.result}//XSLT_Reports//" />
+		<mkdir dir="${ws.home}//Test_Run_History//" />
+		<move todir="${test.result.archive}">
+    		<fileset dir="${ws.home}//Test_Run_History//" includes="**" />
+  		</move>
+		<mkdir dir="${ws.home}//Test_Run_History//" />
+	
+	</target>
+
+	<!-- compile -->
+<!-- ========== Compiling code  =================================== -->
+	<target name="compile" depends="init, clean">
+		<delete quiet="true" includeemptydirs="true">
+			<fileset dir="${test.dest}" includes="**/*" />
+		</delete>
+		<echo message="making directory..." />
+		<mkdir dir="${test.dest}" />
+		<echo message="classpath------: ${test.classpath}" />
+		<echo message="compiling..." />
+		<javac classpath="${test.classpath}" target="1.8" srcdir="${test.src}"
+			destdir="${test.dest}" debug="true">
+		</javac>
+		<echo message="classpath------: ${test.classpath}" />
+		<echo message="timestamp------: ${start.time}" />
+	</target>
+	<!-- run -->
+
+<!-- ========== Run code through testNg  =================================== -->
+	<target name="run" depends="compile">
+		<copy file="${ws.home}//Config//log4j.xml" todir="${test.dest}"/>
+		<property name="testng.output.dir" value="${test.result}//testngOutput//testngResults_${start.time}" />
+		<testng outputdir="${testng.output.dir}" classpath="${test.classpath}:${test.dest}" suitename="Sample test Suite">
+			<xmlfileset dir="${ws.home}//Config//" includes="testng.xml" />
+		</testng>
+	</target>
+<!-- ========== classpath  =================================== -->	
+	<target name="usage">
+		<echo> ant run will execute the test </echo>
+	</target>
+<!-- ========== classpath  =================================== -->
+	<path id="test.c">
+		<fileset dir="${ws.jars}" includes="*.*" />
+	</path>
+
+<!-- ========== Run testNG file and generate XSLT report  =================================== -->
+	
+	<target name="RunAndGenerateXSLTReport" depends="run">
+    
+	    <property name="xslt.output.dir" value="${test.result}//XSLT_Reports//output_${start.time}" />
+		<mkdir dir="${xslt.output.dir}" />
+		<xslt processor="SaxonLiaison" classpathref="test.c"
+			out="${xslt.output.dir}/index.html" style="${ws.home}/Config/testng-results.xsl"
+			in="${testng.output.dir}/testng-results.xml">
+			<param name="testNgXslt.outputDir" expression="${xslt.output.dir}" />
+			<param name="testNgXslt.showRuntimeTotals" expression="true" />
+		</xslt>
+	</target>
+<!-- ========== Send results through email  =================================== -->	
+	<target name="emailResults" depends="RunAndGenerateXSLTReport">
+	    <mail mailhost="smtp.gmail.com" mailport="465" subject="Test build"
+	        user="rahul.gandhi.engr@gmail.com"
+        	password="" ssl="on" messagemimetype="text/html"
+        	charset="ISO-8859-1" >
+  			<from address="rahul.gandhi.engr@gmail.com"/>
+  			<replyto address="rahul.gandhi@nagarro.com"/>
+  			<to address="rahul.gandhi@nagarro.com"/>
+  			<message>"The nightly build has completed"</message>
+  			<attachments>
+    			<fileset dir="${ws.home}//Test_Run_History">
+      				<include name="*"/>
+    			</fileset>
+  			</attachments>
+		</mail>
+	 </target>   
+</project>

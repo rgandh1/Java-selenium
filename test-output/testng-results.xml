@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="suite" duration-ms="8506" started-at="2017-05-01T13:50:56Z" finished-at="2017-05-01T13:51:05Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="8506" started-at="2017-05-01T13:50:56Z" finished-at="2017-05-01T13:51:05Z">
+      <class name="com.Nagarro.nagp.selenium.testSuites.TestSuite">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926]" name="setUp" is-config="true" duration-ms="6398" started-at="2017-05-01T19:20:50Z" finished-at="2017-05-01T19:20:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926]" name="handleTestMethodName" is-config="true" duration-ms="1" started-at="2017-05-01T19:20:56Z" finished-at="2017-05-01T19:20:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC01(java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="TC01(java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926]" name="TC01" duration-ms="4580" started-at="2017-05-01T19:20:56Z" data-provider="dataProvider" finished-at="2017-05-01T19:21:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mercury]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mercury]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC01 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926]" name="afterMethod" is-config="true" duration-ms="1" started-at="2017-05-01T19:21:01Z" finished-at="2017-05-01T19:21:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC01 status=SUCCESS method=TestSuite.TC01(java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC01(java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926]" name="handleTestMethodName" is-config="true" duration-ms="1" started-at="2017-05-01T19:21:01Z" finished-at="2017-05-01T19:21:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC02(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method name="TC02" signature="TC02(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926]" status="PASS" duration-ms="1892" finished-at="2017-05-01T19:21:03Z" started-at="2017-05-01T19:21:01Z" depends-on-methods="com.Nagarro.nagp.selenium.testSuites.TestSuite.TC01" data-provider="dataProvider" description="Test case to create a one way trip for given number of passengers and locations">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[London]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Frankfurt]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC02 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926]" name="afterMethod" is-config="true" duration-ms="1" started-at="2017-05-01T19:21:03Z" finished-at="2017-05-01T19:21:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC02 status=SUCCESS method=TestSuite.TC02(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC02(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926]" name="handleTestMethodName" is-config="true" duration-ms="1" started-at="2017-05-01T19:21:03Z" finished-at="2017-05-01T19:21:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC03(java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method name="TC03" signature="TC03(java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926]" status="PASS" duration-ms="1996" finished-at="2017-05-01T19:21:05Z" started-at="2017-05-01T19:21:03Z" depends-on-methods="com.Nagarro.nagp.selenium.testSuites.TestSuite.TC02" data-provider="dataProvider" description="Test case to verify user is able to select flights for the trip">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Pangaea Airlines 362]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Blue Skies Airlines 631]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC03 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-05-01T19:21:05Z" finished-at="2017-05-01T19:21:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC03 status=SUCCESS method=TestSuite.TC03(java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC03(java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@50de0926]" name="tearDown" is-config="true" duration-ms="1094" started-at="2017-05-01T19:21:05Z" finished-at="2017-05-01T19:21:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.Nagarro.nagp.selenium.testSuites.TestSuite -->
+    </test> <!-- Default test -->
+  </suite> <!-- suite -->
+</testng-results>

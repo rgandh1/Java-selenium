@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="suite" duration-ms="11209" started-at="2017-05-01T10:21:27Z" finished-at="2017-05-01T10:21:38Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="11209" started-at="2017-05-01T10:21:27Z" finished-at="2017-05-01T10:21:38Z">
+      <class name="com.Nagarro.nagp.selenium.testSuites.TestSuite">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8]" name="setUp" is-config="true" duration-ms="7656" started-at="2017-05-01T15:51:19Z" finished-at="2017-05-01T15:51:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8]" name="handleTestMethodName" is-config="true" duration-ms="1" started-at="2017-05-01T15:51:27Z" finished-at="2017-05-01T15:51:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC01(java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="TC01(java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8]" name="TC01" duration-ms="5163" started-at="2017-05-01T15:51:27Z" data-provider="dataProvider" finished-at="2017-05-01T15:51:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mercury]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mercury]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC01 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8]" name="afterMethod" is-config="true" duration-ms="2" started-at="2017-05-01T15:51:32Z" finished-at="2017-05-01T15:51:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC01 status=SUCCESS method=TestSuite.TC01(java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC01(java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8]" name="handleTestMethodName" is-config="true" duration-ms="1" started-at="2017-05-01T15:51:32Z" finished-at="2017-05-01T15:51:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC02(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method name="TC02" signature="TC02(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8]" status="PASS" duration-ms="4032" finished-at="2017-05-01T15:51:36Z" started-at="2017-05-01T15:51:32Z" depends-on-methods="com.Nagarro.nagp.selenium.testSuites.TestSuite.TC01" data-provider="dataProvider" description="Test case to create a one way trip for given number of passengers and locations">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[London]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Frankfurt]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC02 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-05-01T15:51:36Z" finished-at="2017-05-01T15:51:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC02 status=SUCCESS method=TestSuite.TC02(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC02(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method name="TC03" signature="TC03(java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8]" status="PASS" duration-ms="1916" finished-at="2017-05-01T15:51:38Z" started-at="2017-05-01T15:51:36Z" depends-on-methods="com.Nagarro.nagp.selenium.testSuites.TestSuite.TC02" data-provider="dataProvider" description="Test case to verify user is able to select flights for the trip">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Pangaea Airlines 362]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Blue Skies Airlines 631]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC03 -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8]" name="handleTestMethodName" is-config="true" duration-ms="0" started-at="2017-05-01T15:51:36Z" finished-at="2017-05-01T15:51:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC03(java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-05-01T15:51:38Z" finished-at="2017-05-01T15:51:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC03 status=SUCCESS method=TestSuite.TC03(java.lang.String, java.lang.String)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC03(java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="FAIL" signature="tearDown()[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@7a1ebcd8]" name="tearDown" is-config="true" duration-ms="0" started-at="2017-05-01T15:51:38Z" finished-at="2017-05-01T15:51:38Z">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[net/sf/saxon/event/SourceLocationProvider]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: net/sf/saxon/event/SourceLocationProvider
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(Unknown Source)
+	at java.security.SecureClassLoader.defineClass(Unknown Source)
+	at java.net.URLClassLoader.defineClass(Unknown Source)
+	at java.net.URLClassLoader.access$100(Unknown Source)
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at net.sf.saxon.dom.DOMObjectModel.sendSource(DOMObjectModel.java:108)
+	at net.sf.saxon.event.Sender.send(Sender.java:176)
+	at net.sf.saxon.IdentityTransformer.transform(IdentityTransformer.java:28)
+	at org.apache.poi.openxml4j.opc.StreamHelper.saveXmlInStream(StreamHelper.java:80)
+	at org.apache.poi.openxml4j.opc.internal.marshallers.ZipPartMarshaller.marshallRelationshipPart(ZipPartMarshaller.java:181)
+	at org.apache.poi.openxml4j.opc.ZipPackage.saveImpl(ZipPackage.java:460)
+	at org.apache.poi.openxml4j.opc.OPCPackage.save(OPCPackage.java:1467)
+	at org.apache.poi.POIXMLDocument.write(POIXMLDocument.java:217)
+	at com.Nagarro.nagp.selenium.excelSupport.Excel.saveExcelFile(Excel.java:241)
+	at com.Nagarro.nagp.selenium.frameworkSupport.SetupTearDown.testResultHandler(SetupTearDown.java:272)
+	at com.Nagarro.nagp.selenium.frameworkSupport.SetupTearDown.tearDown(SetupTearDown.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:216)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:143)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:336)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
+	at org.testng.TestNG.runSuites(TestNG.java:1104)
+	at org.testng.TestNG.run(TestNG.java:1076)
+	at org.testng.TestNG.privateMain(TestNG.java:1405)
+	at org.testng.TestNG.main(TestNG.java:1374)
+Caused by: java.lang.ClassNotFoundException: net.sf.saxon.event.SourceLocationProvider
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 41 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.Nagarro.nagp.selenium.testSuites.TestSuite -->
+    </test> <!-- Default test -->
+  </suite> <!-- suite -->
+</testng-results>
