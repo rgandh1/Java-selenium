@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="suite" duration-ms="9305" started-at="2017-06-15T09:34:12Z" finished-at="2017-06-15T09:34:21Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="9305" started-at="2017-06-15T09:34:12Z" finished-at="2017-06-15T09:34:21Z">
+      <class name="com.Nagarro.nagp.selenium.testSuites.TestSuite">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@34cd072c]" name="setUp" is-config="true" duration-ms="5595" started-at="2017-06-15T15:04:06Z" finished-at="2017-06-15T15:04:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="TC01(java.util.Hashtable)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@34cd072c]" name="TC01" duration-ms="4422" started-at="2017-06-15T15:04:12Z" data-provider="dataProvider" finished-at="2017-06-15T15:04:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=mercury, userName=mercury}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC01 -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@34cd072c]" name="handleTestMethodName" is-config="true" duration-ms="0" started-at="2017-06-15T15:04:12Z" finished-at="2017-06-15T15:04:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC01(java.util.Hashtable)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@34cd072c]" name="handleTestMethodName" is-config="true" duration-ms="1" started-at="2017-06-15T15:04:16Z" finished-at="2017-06-15T15:04:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC02(java.util.Hashtable) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method name="TC02" signature="TC02(java.util.Hashtable)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@34cd072c]" status="PASS" duration-ms="2064" finished-at="2017-06-15T15:04:18Z" started-at="2017-06-15T15:04:16Z" depends-on-methods="com.Nagarro.nagp.selenium.testSuites.TestSuite.TC01" data-provider="dataProvider" description="Test case to create a one way trip for given number of passengers and locations">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{arrivingTo=Frankfurt, departingFrom=London, Passengers=3}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC02 -->
+        <test-method name="TC03" signature="TC03(java.util.Hashtable)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@34cd072c]" status="PASS" duration-ms="2793" finished-at="2017-06-15T15:04:21Z" started-at="2017-06-15T15:04:18Z" depends-on-methods="com.Nagarro.nagp.selenium.testSuites.TestSuite.TC02" data-provider="dataProvider" description="Test case to verify user is able to select flights for the trip">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{arrivingAt=Blue Skies Airlines 631, departingFlight=Pangaea Airlines 362}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC03 -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@34cd072c]" name="handleTestMethodName" is-config="true" duration-ms="0" started-at="2017-06-15T15:04:18Z" finished-at="2017-06-15T15:04:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.Nagarro.nagp.selenium.testSuites.TestSuite.TC03(java.util.Hashtable) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.Nagarro.nagp.selenium.testSuites.TestSuite@34cd072c]" name="tearDown" is-config="true" duration-ms="930" started-at="2017-06-15T15:04:21Z" finished-at="2017-06-15T15:04:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.Nagarro.nagp.selenium.testSuites.TestSuite -->
+    </test> <!-- Default test -->
+  </suite> <!-- suite -->
+</testng-results>

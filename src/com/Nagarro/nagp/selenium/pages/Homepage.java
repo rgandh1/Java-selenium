@@ -1,5 +1,7 @@
 package com.Nagarro.nagp.selenium.pages;
 
+import java.util.Hashtable;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -28,21 +30,22 @@ public class Homepage extends SetupTearDown{
     	return selenium.isElementPresent(By.xpath(img_flightFinder_xpath));
     	
     }
-    public void enterJourneyDetails(String Passengers, String departingFrom, String arrivingTo)
+    public SelectFlight enterJourneyDetails(Hashtable<String, String> testData)
     {
     	//select oneway trip
     	//select number of passengers as given in parameters
     	// select arriving from and to as given in parameters
     log.info("applicationLOG :");
-    log.info("entering passenger details" + Passengers);
-    log.info("entering departingFrom details" + departingFrom);
-    log.info("entering arrivingTo details" + arrivingTo);
+    log.info("entering passenger details" + testData.get("Passengers"));
+    log.info("entering departingFrom details" + testData.get("departingFrom"));
+    log.info("entering arrivingTo details" + testData.get("arrivingTo"));
     selenium.click_webElement(rbtn_oneway_xpath);
-	selenium.selectValueFromDropDown(drp_passengers_xpath,Passengers);
-	selenium.selectValueFromDropDown(drp_departingfrom_xpath, departingFrom);
-	selenium.selectValueFromDropDown(drp_arrivingIn_xpath, arrivingTo);
+	selenium.selectValueFromDropDown(drp_passengers_xpath,testData.get("Passengers"));
+	selenium.selectValueFromDropDown(drp_departingfrom_xpath, testData.get("departingFrom"));
+	selenium.selectValueFromDropDown(drp_arrivingIn_xpath, testData.get("arrivingTo"));
 	selenium.click_webElement(btn_contibue_xpath);
-	
+	SelectFlight selectFlight =  new SelectFlight();
+	return selectFlight;
     }
 	
 }

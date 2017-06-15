@@ -1,8 +1,21 @@
 package com.Nagarro.nagp.selenium.testSuites;
 
+/*
+ * Purpose of this class is to create test suite
+ */
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -29,15 +42,13 @@ import com.Nagarro.nagp.selenium.seleniumSupport.Selenium;
 public class TestSuite extends SetupTearDown {
 
 	private static Logger log = Logger.getLogger(TestSuite.class.getName());
-
-	//Page objects 
 	
 	
-	//Page objects ends
 	private Login login = new Login();
 	private static Homepage homepage = new Homepage();
 	private SelectFlight selectflight = new SelectFlight();
 	private Bookflight bookflight = new Bookflight();
+	
 	/*
 		Method name:= commonDataProvider
 		Author:= Rahul Gandhi
@@ -50,39 +61,42 @@ public class TestSuite extends SetupTearDown {
 	@DataProvider(name="dataProvider")
 	public static Object[][] commonDataProvider(Method method) throws Exception
 	{
-		
+		testDataSet = new Hashtable<String, String>();
 		sTestCaseName=method.getName();
 		Object[][] dataProviderObject=null;
 				
 		log.info("testCaseName  "+sTestCaseName);
 		log.info(testData);
-		Map<String, ArrayList<String>> testCaseData=testData.get(sTestCaseName);
 		
-		ArrayList<String> arrayList;
+		@SuppressWarnings("unchecked")
+	    Enumeration<String> enums = (Enumeration<String>) testData.propertyNames();
+	    while (enums.hasMoreElements())       
 		
-		if (testData.containsKey("N"))
 		{
-			skipTestCase="Y";
-			arrayList=testCaseData.get("N");
+		     		  
+		     String lKey = enums.nextElement();
+		     String lValue = testData.getProperty(lKey);
+		     System.out.println(lKey);
+		     	
+		     String testCaseName = lKey.substring(0, 4);
+		     String sParameterValue = lKey.substring(5);
+		     log.info(testCaseName);
+		     log.info(sParameterValue +"sParameterValue");
+		     log.info(lValue);
+		     if (sTestCaseName.equalsIgnoreCase(testCaseName))
+			     {
+		    	 
+			     testDataSet.put(sParameterValue, lValue);
+			     }
+		     
+		 }
+	    Object[][] dataSetCollection = new Object[1][1];
+		dataSetCollection[0][0] = testDataSet;
+		return dataSetCollection;
+			     
 		}
-		else
-		{
-			skipTestCase="N";
-			arrayList=testCaseData.get("Y");
-			log.info(arrayList + "test data for testcase");
-		}
-		dataProviderObject = new String[1][arrayList.size()];
-				
-		for (int i = 0; i < arrayList.size(); i++) {
-		    ArrayList<String> row=new ArrayList<String>();
-		    row.add(arrayList.get(i));
-		    //log.info(arrayList.get(i));
-		    dataProviderObject[0][i] = arrayList.get(i).toString();
-		}
-		//log.info("------------------------------------"+dataProviderObject);
-		return (dataProviderObject);
-				
-	}
+		
+		
 	
 	/*
 	Method name:= TC01
@@ -95,22 +109,13 @@ public class TestSuite extends SetupTearDown {
 */
 	@SuppressWarnings("static-access")
 	@Test(dataProvider = "dataProvider",testName="TC01")
-	public void TC01(String sUserName, String sPassword) 
+	public void TC01(Hashtable<String, String> testData) 
 	{
 		
-		if (skipTestCase=="Y")
-		{
-			
-			log.info("testcase skipped as runMode = N");
-			throw new SkipException("tescase skipped");
-		}
 		Assert.assertTrue(login.verifyPagePresent(),"login page is not opened");
-		
-		login.signin(sUserName, sPassword);
-		
+		homepage = login.signin(testData);
 		Assert.assertTrue(homepage.verifyPagePresent(),"unable to login");
-		
-		
+				
 	}
 	
 	/*Method name:= TC02
@@ -123,18 +128,11 @@ public class TestSuite extends SetupTearDown {
 		*/			
 	@SuppressWarnings("static-access")
 	@Test(dataProvider = "dataProvider",testName="TC02", dependsOnMethods="TC01", description="Test case to create a one way trip for given number of passengers and locations")
-	public  void TC02(String Passengers, String departingFrom, String arrivingTo) throws InterruptedException 
-	{
-		
-		if (skipTestCase=="Y") 
-			{
-			log.info("testcase skipped as runMode = N");
-			throw new SkipException("tescase skipped");
-			}
-		
-		homepage.enterJourneyDetails(Passengers, departingFrom, arrivingTo);
+	public  void TC02(Hashtable<String, String> testData) throws InterruptedException 
+	{		
+		selectflight = homepage.enterJourneyDetails(testData);
 		Assert.assertTrue(selectflight.verifyPagePresent(), "Select flight page not opened");
-		
+	
 	}
 	
 	/*Method name:= TC03
@@ -147,16 +145,14 @@ public class TestSuite extends SetupTearDown {
 */	
 	@SuppressWarnings("static-access")
 	@Test(dataProvider = "dataProvider",testName="TC03", dependsOnMethods="TC02", description="Test case to verify user is able to select flights for the trip")
-	public void TC03(String departingFlight, String arrivingAt) throws InterruptedException 
+	public void TC03(Hashtable<String, String> testData) throws InterruptedException 
 	{
 		//select departingFlight for trip
 		// select arrivingAt for trip
 		// Press continue button
 		//verify that user is moved to next screen 
 		
-		if (skipTestCase=="Y") {
-		throw new SkipException("tescase skipped");}
-		selectflight.flightSelection(departingFlight, arrivingAt);
+		bookflight = selectflight.flightSelection(testData);
 		Assert.assertTrue(bookflight.verifyPagePresent());
 	}
 	

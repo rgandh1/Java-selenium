@@ -1,5 +1,7 @@
 package com.Nagarro.nagp.selenium.pages;
 
+import java.util.Hashtable;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 
@@ -24,16 +26,18 @@ public class SelectFlight extends SetupTearDown {
 		return selenium.isElementPresent(By.xpath(img_selectFlight_xpath));
 	}
 	
-	public void flightSelection(String departingFlight, String arrivingAt)
+	public Bookflight flightSelection(Hashtable<String, String> testData)
 	{
 		String sXpath=rbtn_flightSelection_xpath;
-		String departingFromXpath= String.format(sXpath, departingFlight);
-		String arrivingAtXpath= String.format(sXpath, arrivingAt);
+		String departingFromXpath= String.format(sXpath, testData.get("departingFlight"));
+		String arrivingAtXpath= String.format(sXpath, testData.get("arrivingAt"));
 		log.info(departingFromXpath);
 		
 		selenium.click_webElement(departingFromXpath);
 		selenium.click_webElement(arrivingAtXpath);
 		selenium.click_webElement(btn_continue_xpath);
+		Bookflight bookflight = new Bookflight();
+		return bookflight;
 		
 	}
 }

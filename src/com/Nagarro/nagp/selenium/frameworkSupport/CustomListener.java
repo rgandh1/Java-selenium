@@ -1,5 +1,9 @@
 package com.Nagarro.nagp.selenium.frameworkSupport;
 
+/*
+ * Purpose of this class is to take relevant actions on basis of test result
+ */
+
 import java.io.File;
 
 import org.apache.log4j.Logger;

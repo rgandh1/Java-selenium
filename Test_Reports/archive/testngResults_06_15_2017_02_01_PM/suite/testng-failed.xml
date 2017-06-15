@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [suite]">
+  <listeners>
+    <listener class-name="com.Nagarro.nagp.selenium.frameworkSupport.CustomListener"/>
+  </listeners>
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.Nagarro.nagp.selenium.testSuites.TestSuite">
+        <methods>
+          <include name="setUp"/>
+          <include name="TC02"/>
+          <include name="TC03"/>
+          <include name="TC01"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.Nagarro.nagp.selenium.testSuites.TestSuite -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [suite] -->
